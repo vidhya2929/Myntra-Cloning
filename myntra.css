@@ -298,8 +298,7 @@
   background-image: linear-gradient(270deg, #ffe5b2, #fff);
   min-height: 120px;
 }
-.filterAdd{
-  clear: left;
+.filter{
   padding-right: 40px;
   border-bottom: 1px solid #d4d5d9;
   overflow-x: scroll;
@@ -308,23 +307,60 @@
   display: block;
   background-color: #e1eaff;
   font-size: 14px;
-  color: #424554;
+  color: #414554;
 }
-.title{
+.scroll{
   vertical-align: top;
   display: inline-block;
   margin-right: 30px;
   color: #3e4152;
 }
-.filterBy{
+.headingFilter{
   padding-left: 16px;
   padding-top: 30px;
   font-size: 18px;
 }
-.gender{
+.brandFilter{
   padding-left: 16px;
   padding-bottom: 30px;
   font-size: 21.5px;
   font-weight: 700;
   line-height: 1.33;
 }
+.filterValues{
+  display: inline-block;
+}
+.margPadding{
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 4%;
+  vertical-align: top;
+}
+.firstValue,.secondValue{
+ margin-top: 16px;
+ padding: 10px 20px;
+ font-weight: 700;
+ text-align: center;
+ width: 100%;
+ border-radius: 4px;
+ background-color: #fff;
+}
+.secVal{
+  margin-right: 8px;
+  display: inline-block;
+  min-width: 4%;
+  vertical-align: top;
+}
+.arrow{
+  top: 2px;
+  position: absolute;
+  font-size: 16px;
+}
+.moreOption{
+  margin-left: 10px;
+  position: relative;
+  padding-bottom: 15px;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
