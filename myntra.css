@@ -5,15 +5,18 @@
 .fullContent{
   margin: 0;
   padding: 0;
-  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: hsl(0, 0%, 100%);
+  font-family: "Assistant";
+}
+.makeIt{
+  padding-top: 57px;
 }
 .topBar{
   background-color: #ffffff;
-  /* position: fixed; */
+  position: fixed;
   z-index: 100;
   width: 100%;
   box-shadow: 0 1px 0 rgba(148, 150, 159, .3);
@@ -27,7 +30,7 @@
   margin: 16px 0px 16px 16px;
 }
 .myntraIcon{
-  margin: 16px 2px 14px 12px;
+  margin: 16px 2.5px 14px 13px;
 }
 .headTitle{
   display: inline-block;
@@ -110,7 +113,7 @@
   margin-top: 10px;
 }
 .bannerText{
-  padding: 30px 6px;
+  padding: 28.5px 6px;
   font-family: "Assistant";
   display: flex;
   flex-direction: column;
@@ -125,6 +128,9 @@
   font-weight: 700;
   font-size: 12px;
   color: #ffffff;
+  align-items: center;
+  text-align: center;
+  padding-top: 2px;
 }
 .flat{
   font-weight: 400;
@@ -145,9 +151,9 @@
 }
 .imgOne{
   clear: left;
-  border-right: .5px solid #d4d5d9;
+  /* border-right: .5px solid #d4d5d9; */
   border-top: 1px solid #d4d5d9;
-  border-bottom: .5px solid #d4d5d9;
+  /* border-bottom: .5px solid #d4d5d9; */
   float: left;
   width: 50%;
   margin: 0;
@@ -159,8 +165,9 @@
   background-color: rgb(244. 255, 249);
   width: 100%;
   display: block;
+  height: 255px;
   max-width: 100%;
-  width: auto;
+  /* width: auto; */
 }
 .ratingContainer{
   position: absolute;
@@ -204,7 +211,15 @@
   clear: left;
   border-right: .5px solid #d4d5d9;
   border-top: 1px solid #d4d5d9;
-  border-bottom: .5px solid #d4d5d9;
+  /* border-bottom: .5px solid #d4d5d9; */
+  float: left;
+  width: 50%;
+  margin: 0;
+  overflow: hidden;
+}
+.serperatorLine2{
+  clear: left;
+  border-top: 1px solid #d4d5d9;
   float: left;
   width: 50%;
   margin: 0;
@@ -246,6 +261,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: "Assistant";
 }
 .rupeesIcon{
   top: 4px;
@@ -255,9 +271,12 @@
   font-weight: 700;
   color: #282c3f;
   font-size: 13px;
+  width: 17px;
+  height: 17px;
 }
 .amountValue{
-  left: -2px;
+  left: -4px;
+  position: relative;
 }
 #dimRupee{
   opacity: .4;
@@ -277,19 +296,19 @@
 }
 .spaceBeneath{
   min-height: 17px;
-  text-align: left;
-  margin-left: 8px;
+  /* text-align: left;
+  margin-left: 8px; */
 }
 .heartDes{
   color: #282c3f;
   display: inline-block;
   position: absolute;
   bottom: 43px;
-  right: 0;
-  top: 2px;
+  right: 0px;
+  top: 5px;
   /* padding-top: 4px; */
-  /* padding-left: 15px; */
-  height: 38px;
+  /* padding-left: 15px;  */
+  /* height: 38px; */
 }
 .installApp{
   border-top: 4px solid #eaeaec;
@@ -312,23 +331,26 @@
 .scroll{
   vertical-align: top;
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 28px;   /*changed from 30*/
   color: #3e4152;
 }
 .headingFilter{
   padding-left: 16px;
   padding-top: 30px;
   font-size: 18px;
+  font-family: "Assistant";
 }
 .brandFilter{
   padding-left: 16px;
   padding-bottom: 30px;
   font-size: 21.5px;
+  font-family: "Assistant";
   font-weight: 700;
   line-height: 1.33;
 }
 .filterValues{
   display: inline-block;
+  font-family: "Assistant";
 }
 .margPadding{
   margin-right: 8px;
@@ -359,8 +381,81 @@
 .moreOption{
   margin-left: 10px;
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
   vertical-align: bottom;
   display: inline-block;
 }
+.marginBottom{
+  margin-bottom: 16px;
+  vertical-align: bottom;
+  margin-top: -6px;
+}
+.arrowClasss{
+  top: 2px;
+  position: absolute;
+  font-size: 16px;
+}
+@media screen and (min-width: 425px){
+  .imgProp{
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .bannerText{
+    padding-top: 41px;
+    padding-bottom: 30px;
+    border-top-color: black;
+    opacity: 1;
+  }
+  .bannerWrite,.flat{
+    font-size: 14px;
+    padding-bottom: 7px;
+    line-height: 20px;
+  }
+  .img768{
+    display: none;
+  }
+}
 
+@media screen and (min-width: 768px){
+.img375{
+  display: none;
+  /* width: 100%; */
+}
+.img768{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  border-style: none;
+}
+}
+@media screen and (min-width: 1024px) {
+  .topBar{
+    height: 80px;
+  }
+  .backArrow{
+    display: none !important;
+  }
+  .headTitle{
+    display: none;
+  }
+  .myntraIcon{
+    margin-left: 2%;
+    float: left;
+    height: 36px;
+    width: 53px;
+  }
+  .navBig{
+    margin: 0 0 0 1%;
+    display: inline-block;
+    float: left;
+    border: hidden;
+    text-align: center;
+  }
+  .navBig2{
+    display: inline;
+  }
+}
