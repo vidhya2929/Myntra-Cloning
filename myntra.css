@@ -395,6 +395,9 @@
   position: absolute;
   font-size: 16px;
 }
+.img768{
+  display: none;
+}
 @media screen and (min-width: 425px){
   .imgProp{
     height: 255px;
@@ -459,3 +462,7 @@
     display: inline;
   }
 }
+
+
+
+
