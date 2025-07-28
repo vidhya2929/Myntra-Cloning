@@ -435,34 +435,3 @@
   border-style: none;
 }
 }
-@media screen and (min-width: 1024px) {
-  .topBar{
-    height: 80px;
-  }
-  .backArrow{
-    display: none !important;
-  }
-  .headTitle{
-    display: none;
-  }
-  .myntraIcon{
-    margin-left: 2%;
-    float: left;
-    height: 36px;
-    width: 53px;
-  }
-  .navBig{
-    margin: 0 0 0 1%;
-    display: inline-block;
-    float: left;
-    border: hidden;
-    text-align: center;
-  }
-  .navBig2{
-    display: inline;
-  }
-}
-
-
-
-
