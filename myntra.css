@@ -398,6 +398,10 @@
 .img768{
   display: none;
 }
+.filterPage{
+  text-decoration: none;
+  color: #535766;
+}
 @media screen and (min-width: 425px){
   .imgProp{
     height: 255px;

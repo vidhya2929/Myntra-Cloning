@@ -50,8 +50,9 @@ margin: 0;
 .allFilter{
   position: relative;
   overflow: hidden;
+  font-family: "Assistant";
 }
-.genderTab{
+/* .genderTab{
   background: #fff;
   font-weight: 700;
   min-height: 49px;
@@ -59,7 +60,7 @@ margin: 0;
   align-items: center;
   cursor: pointer;
   vertical-align: text-top;
-}
+} */
 #commonProp{
   color: #3e4152;
   font-family: "Assistant";
@@ -70,6 +71,11 @@ margin: 0;
   align-items: center;
   cursor: pointer;
   vertical-align: text-top;
+}
+#commonProp.active{
+  background-color: #fff;
+  font-weight: bold;
+  /* border-left: 3px solid #ff3e6c; */
 }
 .categ{
   background: #f5f5f6;
@@ -91,40 +97,51 @@ margin: 0;
 }
 .secondSide{
   height: 100%;
-  padding-right: 12px;
+  /* padding-right: 12px; */
   width: 66.66%;
   float: left;
 }
-.filterGender{
+.filterOption{
   height: 100vh;
   padding: 0 0 150px;
   overflow: scroll;
   margin-left: 12px;
-}
-.boys{
-  padding: 15px 2px 15px 0;
+} 
+.firstItem{
+  padding: 16px 2px 16px 0;
   border-bottom: .5px solid #eaeaec;
-  font-size: 13px; 
+  font-size: 13px;
+  margin-right: 12px;
 }
-.boysCheck{
+.lastItem{
+  padding: 16px 2px 16px 0;
+  font-size: 13px;
+  margin-right: 12px;
+}
+.labelBoys{
   position: relative;
   cursor: pointer;
   display: inline-block;
   width: 100%;
   font-size: 14px;
+  font-family: "Assistant";
 }
-.checkIndica{
+.checkBoxInd{
   box-sizing: border-box;
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 0;
   width: 16px;
   height: 16px;
   background: #fff;
   border-radius: 2px;
 }
-.checkIndica::after{
-  content: " ";
+.checVisit{
+  margin: 0 12px 0 0;
+  visibility: hidden;
+}
+.checkBoxInd::after{
+  content: "";
   position: absolute;
   top: 4px;
   left: 4px;
@@ -134,53 +151,217 @@ margin: 0;
   border-style: none none solid solid;
   border-width: 1px;
   transform: rotate(-45deg);
-  float: left;
 }
-
-
-.closeApply{
- border-top: 1px solid #eaeaec;
- text-align: center;
- width: 100%;
- bottom: 0;
- position: fixed;
- margin: 0;
+.count{
+  position: absolute;
+  right: 0;
+  font-size: 10px;
+  color: #94969f;
 }
-.bottombars{
+.filterFoot{
+  border-top: 1px solid #eaeaec;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  margin: 0;
+  height: 50px;
+  background: #fff;
+}
+.closeColumn{
   width: 50%;
   float: left;
   padding-right: 16px;
 }
-.buttonCloseApply{
+.close{
   color: #3e4152;
-  font-weight: 400;
-  cursor: pointer;
-  padding: 10px 12px;
-
+  border-color: transparent;
+  background-color: #fff;
+  text-transform: uppercase;
+  padding-top: 15px;
+  font-weight: 300;
 }
 .buttonDivider{
   border-left: 1px solid #eaeaec;
   width: 2px;
-  height: 2px;
+  height: 22px;
   position: absolute;
   left: 50%;
   top: 15px;
   z-index: 1;
 }
-.col2{
-  padding-right: 0;
-  width: 50%;
-  float: left;
-}
-#comm{
-  border-color: transparent;
-  font-weight: 700;
-}
-.applyAlone{
+.Apply{
   color: #ff3e6c;
+  font-weight: bold;
+  border-color: transparent;
   background-color: #fff;
   text-transform: uppercase;
-  width: 100%;
-  height: 50px;
+  padding-top: 16px;
+  padding-right: 10px;
+  padding-left: -5px;
+}
+.searchWrapper {
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.filterSearchInput{
+  width: 73%;
+  margin-left: 4px;
+  padding: 16px 14px;
+  border: 1px solid #d5d5d5;
+  /* border-radius: 4px; */
+  font-family: "Assistant";
   font-size: 14px;
 }
+
+.searchBox{
+  position: relative;
+}
+.searchIcon{
+  position: absolute;
+  top: 60%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #aaa;
+  font-size: 16px;
+  padding-left: 4px;
+}
+.filterSearchInput{
+  padding: 11px 6px 11px 34px;
+  background-color: #f4f4f5;
+  font-size: 12px;
+}
+.firstItem{
+  padding: 16px 12px 16px 0;
+}
+.lastItem{
+  padding: 16px 12px 16px 0;
+}
+
+.priceContainer{
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: "Assistant";
+  line-height: 18px;
+}
+.priceLabel{
+  color: #282c3f;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.priceValue{
+  color: #282c3f;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.productFound{
+  color: #7e818c;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 19px;
+}
+.priceBar{
+  margin-top: 18.5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  transform: rotate(180deg);
+  transform: scaleY(-1);
+  padding-left: 14px;
+}
+.hist1{
+  width: 43.3333px;
+  height: 60px;
+  display: inline-block;
+  background-color: #f6f6f6;
+}
+.hist2{
+  width: 43.3333px;
+  height: 33.6px;
+  display: inline-block;
+  background-color: #f6f6f6;
+}
+.hist3{
+  width: 43.3333px;
+  height: 26.4px;
+  display: inline-block;
+  background-color: #f6f6f6;
+}
+.sliderWrapper {
+  position: relative;
+  height: 20px;
+  margin-right: 50px;
+}
+
+.rangeSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #ff3e6c;
+  border-radius: 5px;
+  position: absolute;
+  pointer-events: none;
+}
+.rangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border: 2px solid #ff3e6c;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+}
+.rangeSlider::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  left: 152px;
+  background: #fff;
+  border: 1px solid rgb(255, 63, 108);
+  box-shadow: rgba(0,0,0,0.4) 0px 2px 4px 0px;
+  border-radius: 100%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+}
+
+.start{
+  height: 100%;
+  font-size: 12px;
+  padding-right: 0;
+  float: left;
+  font-family: "Assistant";
+}
+.heading1{
+  font-weight: 700;
+  text-align: center;
+  margin: 50px 0 8px;
+  font-size: 14px;
+  color: #535766;
+}
+.subheading{
+  text-align: center;
+  padding: 0 20px;
+  color: #535766;
+}
+.selectCate{
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid #ff3e6c;
+  text-align: center;
+  width: 76%;
+  margin: 24px 12%;
+  padding: 6px 0;
+  color: #ff3e6c;
+  text-transform: uppercase;
+}
+

@@ -1,4 +1,4 @@
-function showPopup(){
-  document.getElementById("rightIcons1").onclick = window.alert(`Install App`)
-}
 // create Prompt box
+function showPopup(){
+  document.getElementById("navBar").onclick = window.prompt("Install App");
+}
