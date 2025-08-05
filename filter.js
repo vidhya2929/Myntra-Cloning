@@ -1,12 +1,3 @@
-// const items = document.querySelectorAll('.genderTab');
-
-// items.forEach(item => {
-//   item.addEventListener('click', () =>{
-//     items.forEach(el => el.classList,remove('active'));
-//     // Add active class to the clicked one
-//     item.classList.add('active');
-//   });
-//   });
 
 const filterData = {
   Gender : [
@@ -66,6 +57,26 @@ const filterData = {
     {label:"8seconds", count:3},
     {label:"9rasa", count:15},
     {label:"9shines label", count:30},
+  ],
+  Color: [
+    {label:"Assorted", count:41},
+    {label:"Beige", count:6377},
+    {label:"Black", count:40406},
+    {label:"Blue", count:32261},
+    {label:"Bronze", count:38},
+    {label:"Brown", count:6657},
+    {label:"Burgundy", count:1878},
+    {label:"Camel brown", count:122},
+    {label:"Champagne", count:172},
+    {label:"Charcoal", count:336},
+    {label:"Coffee Brown", count:68},
+    {label:"Copper",count:490},
+    {label:"Coral",count:660},
+    {label:"Cream",count:2629},
+    {label:"Bronze", count:38},
+    {label:"Brown", count:6657},
+    {label:"Burgundy", count:1878},
+    {label:"Camel brown", count:122},
   ],
   "Discount Range": [
     {label: "10% and higher", count: 231103},
@@ -137,15 +148,50 @@ function priceFilter(){
   rangeMin.addEventListener('input', updateValues);
   rangeMax.addEventListener('input', updateValues);
 }
+
+function colorTabFilter(colors){
+  const colorHTML = colors.map(item =>{
+    return`
+   <div class = "colorItem">
+    <label class="labelColor">
+    <input type ="checkbox" class= "checVisit" value="${item.label}">
+    <div class="checkBoxInd"></div>
+    <div class="colorBox" style="background-color: ${item.color};"></div>
+    ${item.label}
+    <span class="count">${item.count}</span>
+    </label>
+    </div>
+    `;
+  }).join('');
+  document.querySelector('.colorFilterContainer').innerHTML = colorHTML;
+}
+
+
+
 function moreFilters(){
 const moreFilter = `
 <div class="start">
-<p class="heading1">Refine your Search</p>
+<p class="heading1">Refine your search</p>
 <p class="subheading">Select any one category to view more filter(s).</p>
-<div class= "selectCate">SELECT CATEGORY</div>
+<div id="cateSelect" class= "selectCate">SELECT CATEGORY</div>
 </div>
 `;
 filterOptionContainer.innerHTML = moreFilter;
+
+const cateBtn = document.getElementById("cateSelect");
+cateBtn.addEventListener("click", ()=> {
+  // function listent for a click on that element
+  const tabs = document.querySelectorAll('#commonProp');
+  const categoryTab = Array.from(tabs).find(
+    tab => tab.textContent.trim() === "Categories"
+    // gets all elements with id commonProp ,converts them into an array and searches for the one whose text is exactly "Categories"
+  );
+  if(categoryTab){
+    categoryTab.click(); // simulates a real mouse click, opening the category section
+    categoryTab.scrollIntoView({behavior: "smooth", block: "center"});
+    // scrollIntoView() -scrolls the page to show the tab smoothly
+  }
+});
 }
 
 const tabs = document.querySelectorAll('#commonProp');
@@ -159,6 +205,8 @@ tabs.forEach(tab =>{
       priceFilter();
       return;
     }
+
+
     if(tabName === "More Filters"){
       moreFilters();
       return;
@@ -176,9 +224,12 @@ tabs.forEach(tab =>{
       });
     });
   }
+
+
+  
     if (items && items.length > 0) {
       let html = '';
-      if(tabName === "Size" || tabName === "Brand" || tabName=== "Color" || tabName === "Country of Origin"){
+      if(tabName === "Size" || tabName === "Brand" || tabName === "Color" || tabName === "Country of Origin"){
         html += `
         <div class="searchWrapper">
         <div class= "searchBox">
@@ -201,7 +252,6 @@ tabs.forEach(tab =>{
           </div>
         `;
       }).join('');
-
       filterOptionContainer.innerHTML = html;
     }
     
@@ -220,7 +270,6 @@ tabs.forEach(tab =>{
         
     //   }
     // });
-  
 
   });
 });

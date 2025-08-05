@@ -102,6 +102,63 @@ const filterData = {
   ]
 };
 
+function priceFilter(){
+  const priceHTML = `
+  <div class="priceContainer">
+  <div class="priceLabel">Selected price range</div>
+  <div class="priceValue">₹<span id = "minVal">0 </span> - ₹<span id = "maxVal">48,000+</span></div>
+  <div class="productFound">269199 products found</div>
+  <div class="priceBar">
+  <div class="hist1"></div>
+  <div class="hist2"></div>
+  <div class="hist3"></div>
+  </div>
+  <div class="sliderWrapper">
+        <input type="range" min="0" max="48,000" value="0" id="rangeMin" class="rangeSlider" />
+        <input type="range" min="0" max="48000" value="48000" id="rangeMax" class="rangeSlider" />
+        <div class = "rangeTrack"></div>
+      </div>
+    </div>
+  `;
+  // <input type = "range"/>  // it is a slider.has a min,max, and value
+  // first create HTML using JS
+  filterOptionContainer.innerHTML = priceHTML;
+  // filterOptionContainer is a div in page where filters are shown.this above line inserts the above HTML into the part of the page
+
+  const rangeMin = document.getElementById('rangeMin');
+  const rangeMax = document.getElementById('rangeMax');
+  // these are 2 sliders (min  and max)
+
+  const minVal = document.getElementById('minVal');
+  const maxVal = document.getElementById('maxVal');
+  // these are the numbers shown( 0- 48000+)
+  // stroring refernces to sliders=> min and max range
+
+  function updateValues() {
+    // getting the values of both sliders
+    // parseInt() converts them from string to number.
+    let min = parseInt(rangeMin.value);  // value of left slider
+    let max = parseInt(rangeMax.value);  // value of right slider
+    if (min > max) [min, max] = [max, min];
+    // if user drags the min slider higher than max
+    // swaps the values if min slider goes higher than max
+    minVal.textContent = min;
+    maxVal.textContent = max + '+';
+    // Shows the current values betwen the sliders
+    // changes the displayed prices(₹min - ₹max+) based on slider position
+  }
+
+  rangeMin.addEventListener('input', updateValues);
+  rangeMax.addEventListener('input', updateValues);
+  // whenever the user moves either slider, run the updateValues() function to refresh price display
+
+}
+
+
+
+
+
+
 const tabs = document.querySelectorAll('#commonProp');
 // finds all html elements with id commonprop and it returns a nodeList
 const filterOptionContainer = document.querySelector('.filterOption');
@@ -205,3 +262,9 @@ if(items && items.length > 0){
 
 // return  `.........`
 // thee whole part inside the backtics(``) is a termperal literal. It allow us write multiline HTML with JavaScript values injected.
+
+/* Chrome & Safari */
+// .rangeSlider::-webkit-slider-thumb { ... }
+
+/* Firefox */
+// .rangeSlider::-moz-range-thumb { ... }

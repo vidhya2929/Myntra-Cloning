@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.topBar{
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  box-shadow: rgba(148, 150, 159, 0.3) 0px 1px 2px 0px
+}
+#navBar{
+  display: inline-block;
+  vertical-align: top;
+}
+.backArrow{
+  margin: 16px 0px 16px 16px;
+}
+
+#searchInput{
+  outline: 0;
+  font-family: "Assistant";
+  position: fixed;
+  font-size: 16px;
+  color: #48494d;
+  border: none;
+  z-index: 105;
+  left: 50px;
+  top: 8px;
+  width: 66%;
+  padding-right: 8px;
+  padding-top: 10px;
+  display: block;
+  caret-color: #ff2459;
+  opacity: 0.8;
+}
+.pinkSearch{
+  right: 0;
+  z-index: 110;
+  top: 10.5px;
+  margin-right: 16px;
+  position: fixed;
+  min-height: 30px;
+  background: #fff;
+  overflow: hidden;
+}
+.downSearch{
+  
+  
+}
+
