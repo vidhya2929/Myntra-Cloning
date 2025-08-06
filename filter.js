@@ -59,24 +59,31 @@ const filterData = {
     {label:"9shines label", count:30},
   ],
   Color: [
-    {label:"Assorted", count:41},
-    {label:"Beige", count:6377},
-    {label:"Black", count:40406},
-    {label:"Blue", count:32261},
-    {label:"Bronze", count:38},
-    {label:"Brown", count:6657},
-    {label:"Burgundy", count:1878},
-    {label:"Camel brown", count:122},
-    {label:"Champagne", count:172},
-    {label:"Charcoal", count:336},
-    {label:"Coffee Brown", count:68},
-    {label:"Copper",count:490},
-    {label:"Coral",count:660},
-    {label:"Cream",count:2629},
-    {label:"Bronze", count:38},
-    {label:"Brown", count:6657},
-    {label:"Burgundy", count:1878},
-    {label:"Camel brown", count:122},
+    {label:"Assorted", count:41, color:"rgb(94, 177, 96)"},
+    {label:"Beige", count:6377, color:"rgb(232, 230, 207)"},
+    {label:"Black", count:40406, color:"rgb(54, 69, 79)"},
+    {label:"Blue", count:32261, color:"rgb(0, 116, 217)"},
+    {label:"Bronze", count:38, color:"rgb(204, 130, 64)"},
+    {label:"Brown", count:6657, color:"rgb(139, 69, 19)"},
+    {label:"Burgundy", count:1878, color:"rgb(160, 50, 69)"},
+    {label:"Camel brown", count:122,color:"rgb(247, 231, 206)"},
+    {label:"Champagne", count:172, color:"rgb(193, 154, 107)"},
+    {label:"Charcoal", count:336, color:"rgb(54, 69, 79)"},
+    {label:"Coffee Brown", count:68, color:"rgb(75, 48, 47)"},
+    {label:"Copper",count:490, color:"rgb(120, 108, 57)"},
+    {label:"Coral",count:660, color:"rgb(255, 127, 80)"},
+    {label:"Cream",count:2629, color:"rgb(237, 230, 185)"},
+    {label:"Fluorescent green", count:38, color:"rgb(141, 192, 74)"},
+    {label:"Gold", count:6657, color:"rgb(229, 199, 74)"},
+    {label:"Green", count:1878, color:"rgb(94, 177, 96)"},
+    {label:"Grey", count:122, color:"rgb(128, 128, 128)"},
+    {label:"Blue", count:32261, color:"rgb(0, 116, 217)"},
+    {label:"Bronze", count:38, color:"rgb(204, 130, 64)"},
+    {label:"Brown", count:6657, color:"rgb(139, 69, 19)"},
+    {label:"Burgundy", count:1878, color:"rgb(160, 50, 69)"},
+    {label:"Camel brown", count:122,color:"rgb(247, 231, 206)"},
+    {label:"Champagne", count:172, color:"rgb(193, 154, 107)"}
+    
   ],
   "Discount Range": [
     {label: "10% and higher", count: 231103},
@@ -130,7 +137,7 @@ function priceFilter(){
       </div>
     </div>
   `;
-  filterOptionContainer.innerHTML = priceHTML;
+  colorFilterContainer.innerHTML = priceHTML;
 
   const rangeMin = document.getElementById('rangeMin');
   const rangeMax = document.getElementById('rangeMax');
@@ -163,7 +170,8 @@ function colorTabFilter(colors){
     </div>
     `;
   }).join('');
-  document.querySelector('.colorFilterContainer').innerHTML = colorHTML;
+  filterOptionContainer.innerHTML = colorHTML;
+  
 }
 
 
@@ -205,7 +213,10 @@ tabs.forEach(tab =>{
       priceFilter();
       return;
     }
-
+    if(tabName === "Color"){
+      colorTabFilter(filterData["Color"]);
+      return;
+    }
 
     if(tabName === "More Filters"){
       moreFilters();
